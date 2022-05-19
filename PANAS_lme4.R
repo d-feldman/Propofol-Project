@@ -138,8 +138,6 @@ PANAS_pwc <-PANAS_pwc %>% add_xy_position(x = 'D.redcap_event_name')
 
 ###VISUALIZE###
 #All you have to do is change y column name
-# PANAS_Vis <- ggline(D1, x = 'D.redcap_event_name', y = 'panas_Negative_1',
-#                     color = 'D.randomization', palette = 'jco', add = 'mean_se')
 
 PANAS_line <- ggline(D1, x= 'D.redcap_event_name', y= 'panas_Positive_1',
                     color = 'D.randomization', palette = 'jco', add = 'mean_sd') +
