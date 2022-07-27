@@ -157,5 +157,9 @@ D_results <- D_results %>% mutate(Visit_Number = case_when(Visit == 't1_arm_1'~ 
 D_results_randomized_only <- subset(D_results, Dose_Time != 'Open_Label_High_Dose_Pre')
 D_results_randomized_only <- subset(D_results_randomized_only, Dose_Time != 'Open_Label_High_Dose_Post')
 
+## As Factor
+D_results_randomized_only$Dose_Time <- as.factor(D_results_randomized_only$Dose_Time)
+D_results_randomized_only$Visit_Number <- as.factor(D_results_randomized_only$Visit_Number)
+
 ##Cleaning Done
 ##Ready for analysis
