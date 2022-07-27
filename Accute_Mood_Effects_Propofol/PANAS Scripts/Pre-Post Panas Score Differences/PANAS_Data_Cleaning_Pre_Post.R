@@ -161,5 +161,7 @@ D_results_randomized_only <- subset(D_results_randomized_only, Dose_Time != 'Ope
 D_results_randomized_only$Dose_Time <- as.factor(D_results_randomized_only$Dose_Time)
 D_results_randomized_only$Visit_Number <- as.factor(D_results_randomized_only$Visit_Number)
 
+D_results$Dose_Time <- as.factor(D_results$Dose_Time)
+D_results$Visit_Number <- as.factor(D_results$Visit_Number)
 ##Cleaning Done
 ##Ready for analysis
