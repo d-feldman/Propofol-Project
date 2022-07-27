@@ -8,7 +8,7 @@ library(tidyr)
 
 ###SETUP###
 ##Set working Directory and load CSV##
-setwd('/Users/danielfeldman/Desktop/NAP_Example_Data')
+setwd('/Users/danielfeldman/Desktop/DEQ5 Scripts/')
 
 D <- read.csv('NAPStudyCCTS4510_DEQ5.csv', header=T)
 
@@ -75,5 +75,7 @@ D2 <- D2 %>% mutate(TX_Number = case_when(Visit == 't1_arm_1'~ 1,
       Visit == 't7_arm_1'~ 1, Visit == 't8_arm_1'~ 2, Visit == 't9_arm_1' ~ 3,
       Visit == 't10_arm_1'~ 4, Visit == 't11_arm_1' ~ 5, Visit == 't12_arm_1'~ 6)) 
 
-
+##make factors
+D2$Dose_Time <- as.factor(D2$Dose_Time)
+D2$TX_Number <- as.factor(D2$TX_Number)
 ###Data has been cleaned!

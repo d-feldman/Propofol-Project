@@ -8,8 +8,8 @@ library(corrplot)
 
 
 #Mixed Linear Model
-DEQ5_lm <- lmer(formula = Drug_Effect ~ as.factor(Dose_Time) *
-                  as.factor(TX_Number) + (1|Subject), data = D2) 
+DEQ5_lm <- lmer(formula = High ~ Dose_Time *
+                  TX_Number + (1|Subject), data = D2) 
 
 #convert lm into Anova
 DEQ5_anova <- anova(DEQ5_lm) 
@@ -19,7 +19,8 @@ DEQ5_eta_sq <- eta_sq(DEQ5_lm, partial= T)
 
 #Pairwise analysis
 DEQ5_pairwise_visit <- emmeans(DEQ5_lm, list(pairwise ~ Dose_Time | TX_Number), 
-                                              adjust = 'bonferroni')
+                               adjust = 'bonferroni')
+                                              
 
 
 ##Correlations 
