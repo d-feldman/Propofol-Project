@@ -3,6 +3,7 @@
 #libraries
 library(dplyr)
 library(tidyr)
+library(lsr)
 
 
 ###Summary Stats###
@@ -16,11 +17,18 @@ library(tidyr)
 
 
 ###group T-Test###
-Gres_Drug<- t.test(Drug_Effect ~ Group, data=D1, paired = F)
-Gres_High<- t.test(High ~ Group, data=D1, paired = F)
-Gres_Like<- t.test(Like ~ Group, data=D1, paired = F)
-Gres_Dislike<- t.test(Dislike ~ Group, data=D1, paired = F)
-Gres_Want<- t.test(Want_More ~ Group, data=D1, paired = F)
+Gres_Drug<- t.test(Drug_Effect ~ Dose, data=D1, paired = F)
+Gres_High<- t.test(High ~ Dose, data=D1, paired = F)
+Gres_Like<- t.test(Like ~ Dose, data=D1, paired = F)
+Gres_Dislike<- t.test(Dislike ~ Dose, data=D1, paired = F)
+Gres_Want<- t.test(Want_More ~ Dose, data=D1, paired = F)
+
+#Cohen's D
+Gres_Drug<- cohensD(Drug_Effect ~ Dose, data=D1)
+Gres_High<- cohensD(High ~ Dose, data=D1)
+Gres_Like<- cohensD(Like ~ Dose, data=D1)
+Gres_Dislike<- cohensD(Dislike ~ Dose, data=D1)
+Gres_Want<- cohensD(Want_More ~ Dose, data=D1)
 
 
 ##print##
